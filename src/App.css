@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  color: white;
+  min-height: 100vh;
+}
+
+.App h1 {
+  font-size: 5rem;
+}
+
+.App p {
+  font-size: 1.5rem;
 }
 
 .App-logo {
