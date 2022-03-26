@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { user } from "./interfaces";
 import "./App.css";
 
 // interface AppProps {
@@ -16,7 +18,24 @@ import "./App.css";
 // }
 
 const App = () => {
-  return <div>App</div>;
+  const [user, setUser] = useState<user | null>(null); //uses type inference
+
+  const fetchUser = () => {
+    setUser({
+      name: "kevin",
+      age: 28,
+      country: "Canada",
+      address: { street: "columbia", number: 23 },
+      admin: false,
+    });
+  };
+
+  return (
+    <div className="App">
+      <button onClick={fetchUser}>Fetch User On Click</button>
+      {user && <p>Welcome {user.name}</p>}
+    </div>
+  );
 };
 
 export default App;
